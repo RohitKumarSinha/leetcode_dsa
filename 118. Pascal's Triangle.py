@@ -19,3 +19,6 @@ class Solution(object):
             pascal_triangle.append(new_row)  # Add the newly calculated row
         
         return pascal_triangle
+    
+
+gen
