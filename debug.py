@@ -1,18 +1,18 @@
-class Solution(object):
-    def moveZeroes(self, nums):
+def findMaxConsecutiveOnes(nums):
         """
         :type nums: List[int]
-        :rtype: None Do not return anything, modify nums in-place instead.
+        :rtype: int
         """
-        non_zero_index = 0
+        largest = 0
+        count = 0
+        for num in nums:
+            if num == 1:
+                count += 1
+            else:
+                largest = max(largest, count)
+                count = 0
 
-        for i in range(len(nums)):
-            if (nums[i] != 0):
-                nums[non_zero_index], nums[i] = nums[i], nums[non_zero_index]
-                non_zero_index += 1
+        return largest
 
-        return nums
-
-# Example usage:
-solution = Solution()
-print(solution.moveZeroes([0,1,0,3,12, 20, 10, 0, 5]))
+ans = findMaxConsecutiveOnes(nums = [1,1,0,1,1,1])
+print(ans)
