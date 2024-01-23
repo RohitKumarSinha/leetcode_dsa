@@ -1,18 +1,14 @@
-def findMaxConsecutiveOnes(nums):
+def findArray(pref):
         """
-        :type nums: List[int]
-        :rtype: int
+        :type pref: List[int]
+        :rtype: List[int]
         """
-        largest = 0
-        count = 0
-        for num in nums:
-            if num == 1:
-                count += 1
-            else:
-                largest = max(largest, count)
-                count = 0
+        ans = [0] * len(pref)
+        ans[0] = pref[0]
+        for i in range(1, len(ans)):
+            ans[i] = pref[i] ^ pref[i - 1]
+        return ans
+        
 
-        return largest
-
-ans = findMaxConsecutiveOnes(nums = [1,1,0,1,1,1])
+ans = findArray(pref = [5,2,0,3,1])
 print(ans)

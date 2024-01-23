@@ -20,5 +20,3 @@ class Solution(object):
         
         return pascal_triangle
     
-
-gen

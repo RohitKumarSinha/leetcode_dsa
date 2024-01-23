@@ -1,10 +1,14 @@
-class Solution(object):
-    def missingNumber(self, nums):
+def findErrorNums(nums):
         """
         :type nums: List[int]
-        :rtype: int
+        :rtype: List[int]
         """
-        n = len(nums)
-        for i in range(n + 1):
-            if i not in nums:
-                return i
+        count = [0] * len(nums)
+
+        for i in nums:
+            count[i - 1] += 1
+        
+        return [count.index(2) + 1, count.index(0) + 1]
+
+ans = findErrorNums(nums = [1,2,2,4])
+print(ans)
