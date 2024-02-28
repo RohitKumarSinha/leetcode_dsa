@@ -1,14 +1,18 @@
-def findArray(pref):
+def rotate(nums, k):
         """
-        :type pref: List[int]
-        :rtype: List[int]
+        :type nums: List[int]
+        :type k: int
+        :rtype: None Do not return anything, modify nums in-place instead.
         """
-        ans = [0] * len(pref)
-        ans[0] = pref[0]
-        for i in range(1, len(ans)):
-            ans[i] = pref[i] ^ pref[i - 1]
-        return ans
-        
 
-ans = findArray(pref = [5,2,0,3,1])
-print(ans)
+        temp = [None] * len(nums)
+
+        for i in range(0,len(nums)):
+            temp[(i + k) % len(nums)] = nums[i]
+
+        nums = temp.copy
+
+        
+nums = [1,2,3,4,5,6,7]
+rotate(nums, 3)
+print(nums)
