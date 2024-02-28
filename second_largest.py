@@ -10,6 +10,9 @@ def secondLargest(nums, n):
         elif (nums[i] > secondLargest and nums[i] != largest):
             secondLargest = nums[i]
 
+        if secondLargest == -9999:
+            return -1
+
     return secondLargest
 
 
