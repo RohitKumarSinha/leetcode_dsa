@@ -1,13 +1,13 @@
 def reverseWords(s):
 
-    #split the word 
-    word = s.split()
+    #split the words
+    words = s.split()
 
-    #reverse the word in array
-    word = word[::-1]
+    #reverse the words in array 
+    words = words[::-1]
 
-    # trim the word 
-    return " ".join(word)
+    #trim the words 
+    return ' '.join(words)
 
 ans = reverseWords('My Name Is Rohit')
 print(ans)
